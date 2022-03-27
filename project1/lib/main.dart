@@ -34,7 +34,8 @@ class HomePage extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("the nation")),
+        appBar: AppBar(title: Text("the nation"),
+        backgroundColor: Color.fromRGBO(0, 0, 0, .6)),
         body: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
