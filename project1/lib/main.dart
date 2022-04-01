@@ -1,6 +1,8 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:project1/Recipie.dart';
+import 'package:project1/recipie_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,35 +33,39 @@ class HomePage extends State {
     });
   }
 
+  var recipies = [
+    Recipie("cloud", "photos/26975.jpg"),
+    Recipie("cloud", "photos/BEIMNET-logos.jpeg"),
+    Recipie("cloud", "photos/stephanie-nakagawa-ADSKIn0ScDg-unsplash.jpg"),
+    Recipie("cloud", "photos/26975.jpg"),
+    Recipie("cloud", "photos/BEIMNET-logos.jpeg"),
+  ];
+
+  var colors1 = [
+    Colors.blue,
+    Colors.red,
+    Colors.green,
+    Colors.amber,
+    Colors.cyan
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("the nation"),
-        backgroundColor: Color.fromRGBO(0, 0, 0, .6)),
-        body: Center(
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text(
-            'It has been clicked this times',
-            style: TextStyle(fontSize: 25),
-          ),
-          Text(
-            " $_counter",
-            style: TextStyle(fontSize: 30),
-          ),
-          Text(
-            (_counter % 2 == 0 ? "even" : "odd"),
-            //or if _counter%2==0 Text("thsd") else Text("rthf")
-            style: TextStyle(fontSize: 30),
-          )
-        ])),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => _incrementCounter(),
-          child: Icon(_counter % 2 == 0
-              ? Icons.sanitizer_rounded
-              : Icons.sailing_sharp),
-        ));
-    throw UnimplementedError();
+        appBar: AppBar(
+            title: Text("the nation"),
+            backgroundColor: Color.fromRGBO(0, 0, 0, .6)),
+        body: ListView.builder(
+            itemCount: 5,
+            itemBuilder: (BuildContext context, int index) {
+              return GestureDetector(
+                  onDoubleTap: (() => {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return RecipieDetail(recipies[index]);
+                        }))
+                      }),
+                  child: Image(image: AssetImage(recipies[index].url!)));
+            }));
   }
 }
 
