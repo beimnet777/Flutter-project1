@@ -18,10 +18,40 @@ class RecipieDetail extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Image(
-              image: AssetImage(recipie.url!),
-              height: 300,
-              width: double.infinity,
+            CircleAvatar(
+              child: Image(
+                image: AssetImage(recipie.url!),
+                height: 300,
+                width: double.infinity,
+              ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Name',
+                  style: TextStyle(fontSize: 30.0, color: Colors.amber[600]),
+                ),
+                SizedBox(height: 30.0),
+                Text('BEIMNET BEKELE',
+                    style: TextStyle(
+                      color: Colors.green[300],
+                      fontSize: 60.0,
+                    )),
+                Text(
+                  'Addres',
+                  style: TextStyle(fontSize: 30.0, color: Colors.amber[600]),
+                ),
+                SizedBox(height: 30.0),
+                Text(
+                  'ADDIS ABABA',
+                  style: TextStyle(
+                    color: Colors.green[300],
+                    fontSize: 60.0,
+                  ),
+                )
+              ],
             )
           ],
         ),
