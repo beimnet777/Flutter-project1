@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project1/new3.dart';
+
+
 
 class stack_ex extends StatelessWidget {
   @override
@@ -58,7 +61,8 @@ class stack_ex extends StatelessWidget {
                               padding: EdgeInsets.all(10),
                               child: Text(
                                 "Design",
-                                style: TextStyle(fontSize: 40),
+                                style: TextStyle(
+                                    fontSize: 40, color: Colors.white),
                               )))),
                   Align(
                       alignment: Alignment.topLeft,
@@ -70,7 +74,7 @@ class stack_ex extends StatelessWidget {
                         children: [
                           Icon(Icons.border_color),
                           SizedBox(width: 10),
-                          Icon(Icons.menu)
+                          Icon(Icons.more_vert)
                         ],
                       ))
                 ],

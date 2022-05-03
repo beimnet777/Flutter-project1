@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:project1/Recipie.dart';
+import 'package:project1/new3.dart';
 import 'package:project1/recipie_list.dart';
 import 'package:project1/stack.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: stack_ex(),
+      home: new3(),
     );
   }
 }
